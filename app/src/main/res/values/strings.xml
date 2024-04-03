@@ -3,9 +3,14 @@
     <!-- Stock Information Strings -->
     <string name="share_name">%s</string>
     <string name="share_quantity">%d</string>
-    <string name="share_last_traded_price">LTP: ₹ %.2f</string>
-    <string name="share_profit_loss_amount">P/L: ₹ %.2f</string>
+    <string name="share_last_traded_price">LTP: <b>₹ %.2f</b></string>
+    <string name="share_profit_loss_amount">P/L: <b>₹ %.2f</b></string>
 
+    <!-- Total Stock Information Strings -->
+    <string name="total_stock_current_value">Current Value:</string>
+    <string name="total_stock_investment">Total Investment:</string>
+    <string name="total_stock_today_profit_loss">Today\'s Profit &amp; Loss:</string>
+    <string name="total_stock_profit_and_loss">Profit &amp; Loss:</string>
 
     <!--defalut demi stock strings.-->
     <string name="default_share_name">IRFC</string>

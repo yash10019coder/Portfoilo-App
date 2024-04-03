@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="totalStockListingModel"
+            type="com.yash10019coder.upstox.ui.databinding.StockTotalListingsModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="15dp">
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_arrow_drop_down_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/total_holdings_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivArrow"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/total_stock_current_value"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@{totalStockListingModel.totalCurrentValue+``,default=7868}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/total_stock_investment"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@{totalStockListingModel.totalInvestment+``,default=7868}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:text="@string/total_stock_today_profit_loss"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="end"
+                    android:text="@{totalStockListingModel.todayProfitAndLoss+``,default=7868}" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_holdings_container">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/total_stock_profit_and_loss"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="end"
+                android:text="@{totalStockListingModel.profitAndLoss+``,default=7868}" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
