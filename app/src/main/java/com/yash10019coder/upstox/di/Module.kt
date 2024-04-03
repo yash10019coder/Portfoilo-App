@@ -24,13 +24,12 @@ class Module {
 
     @Provides
     fun provideOkhttpClient(): OkHttpClient {
-        lateinit var loggingInteceptor: HttpLoggingInterceptor
-        loggingInteceptor = HttpLoggingInterceptor()
-        loggingInteceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        var loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
 
         return OkHttpClient.Builder()
             .callTimeout(5, java.util.concurrent.TimeUnit.SECONDS)
-            .addInterceptor(loggingInteceptor)
+            .addInterceptor(loggingInterceptor)
             .readTimeout(5, java.util.concurrent.TimeUnit.SECONDS)
             .writeTimeout(5, java.util.concurrent.TimeUnit.SECONDS)
             .build()

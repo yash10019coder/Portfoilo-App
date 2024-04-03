@@ -4,5 +4,6 @@ data class StockDto(
     val symbol: String,
     val quantity: Long,
     val lastTradedPrice: Double,
-    val profitAndLoss: Double,
+    val closePrice: Double,
+    val averagePrice: Double
 )

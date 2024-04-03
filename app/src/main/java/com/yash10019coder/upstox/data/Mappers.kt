@@ -11,8 +11,8 @@ object Mappers {
                 symbol = it.symbol,
                 quantity = it.quantity.toLong(),
                 lastTradedPrice = it.ltp,
-                //TODO: Calculate profit and loss later in domain
-                profitAndLoss = it.ltp
+                averagePrice = it.avgPrice,
+                closePrice = it.close
             )
         }
     }
