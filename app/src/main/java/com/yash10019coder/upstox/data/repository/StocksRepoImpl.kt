@@ -8,17 +8,8 @@ import javax.inject.Inject
 
 class StocksRepoImpl @Inject constructor(
     private val stockService: StockService
-    private val applicationContext: Context
 ) : StocksRepo {
     override suspend fun getStocks(): NetworkResult<StockResponse> {
         return handleApi { stockService.getStocks() }
-    }
-
-    override suspend fun getStockDemi(): NetworkResult<StockResponse> {
-        return NetworkResult.Success(StockResponse())
-    }
-
-    private fun getDemiStocksResponse(): StockResponse {
-        val
     }
 }

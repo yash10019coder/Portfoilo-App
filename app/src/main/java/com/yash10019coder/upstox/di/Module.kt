@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class Module {
     @Provides
     @BaseUrl
-    fun provideBaseUrl() = "https://56fac6136f5d450eb45648516f0c4b10.api.mockbin.io"
+    fun provideBaseUrl() = "https://35dee773a9ec441e9f38d5fc249406ce.api.mockbin.io"
 
     @Provides
     fun provideOkhttpClient(): OkHttpClient {
