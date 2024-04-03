@@ -6,10 +6,13 @@ import com.yash10019coder.upstox.data.BaseUrl
 import com.yash10019coder.upstox.data.api.StockService
 import com.yash10019coder.upstox.data.repository.StocksRepo
 import com.yash10019coder.upstox.data.repository.StocksRepoImpl
+import com.yash10019coder.upstox.domain.controller.StocksController
+import com.yash10019coder.upstox.domain.utils.Utils
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -67,4 +70,15 @@ class Module {
     ): StocksRepo {
         return StocksRepoImpl(stockService)
     }
+
+    @Provides
+    fun provideDomainUtils(): Utils {
+        return Utils(Dispatchers.IO)
+    }
+
+    @Provides
+    fun provideStocksController(stocksRepo: StocksRepo): StocksController {
+        return StocksController(stocksRepo, Dispatchers.IO)
+    }
+
 }

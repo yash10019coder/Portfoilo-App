@@ -20,11 +20,7 @@ suspend fun <T : Any> handleApi(
     return try {
         val response = execute()
         var body = response.body()
-        //TODO: migrate this to a middleware later.
-        if (body != null) {
-            val modifiedBody = modifyResponseBody(response)
-            body = modifiedBody as T
-        }
+
         if (response.isSuccessful && body != null) {
             NetworkResult.Success(body)
         } else {

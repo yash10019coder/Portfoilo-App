@@ -1,9 +1,9 @@
-package com.yash10019coder.upstox.data
+package com.yash10019coder.upstox.mappers
 
 import com.yash10019coder.upstox.data.model.StockDto
 import com.yash10019coder.upstox.data.model.StockResponse
 
-object Mappers {
+object DataMappers {
     fun StockResponse.mapStockResponseToDto(): List<StockDto> {
         val response: StockResponse = this
         return response.data.userHolding.map {

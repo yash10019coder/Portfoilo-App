@@ -8,6 +8,4 @@ interface StockService {
 
     @GET("/")
     suspend fun getStocks(): Response<StockResponse>
-
-    suspend fun getStockDemi(): Response<StockResponse>
 }

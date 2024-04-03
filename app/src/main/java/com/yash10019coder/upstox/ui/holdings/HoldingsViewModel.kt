@@ -2,9 +2,9 @@ package com.yash10019coder.upstox.ui.holdings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.yash10019coder.upstox.domain.controller.StocksController
 import com.yash10019coder.upstox.data.model.NetworkResult
 import com.yash10019coder.upstox.databinding.StockListingItemModel
+import com.yash10019coder.upstox.domain.controller.StocksController
 import com.yash10019coder.upstox.mappers.UiMappers.mapStockDtoToUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -42,7 +42,7 @@ class HoldingsViewModel @Inject constructor(
         return employeeList
     }
 
-    private suspend fun loadDemiData(){
+    private suspend fun loadDemiData() {
         viewModelScope.launch {
             _isLoading.value = true
             _stockList.value = generateDemiEmployeeData()
@@ -56,7 +56,7 @@ class HoldingsViewModel @Inject constructor(
             val result = stocksController.getStocks()
             when (result) {
                 is NetworkResult.Success -> {
-                    _stockList.value = result.data.mapStockDtoToUiModel()
+                    _stockList.value = result.data.stocksListings
                 }
 
                 is NetworkResult.Error -> {

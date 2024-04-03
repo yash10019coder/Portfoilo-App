@@ -1,6 +1,6 @@
 package com.yash10019coder.upstox.domain.utils
 
-import com.yash10019coder.upstox.domain.model.UserHolding
+import com.yash10019coder.upstox.data.model.StockDto
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -18,28 +18,28 @@ class Utils @Inject constructor(
 
     suspend fun calculateCurrentValue(
         lastTradedPrice: Double,
-        quantity: Int
+        quantity: Long
     ): Double = withContext(dispatcher) {
         lastTradedPrice * quantity
     }
 
     suspend fun calculateInvestmentValue(
         averagePrice: Double,
-        quantity: Int
+        quantity: Long
     ): Double = withContext(dispatcher) {
         averagePrice * quantity
     }
 
     suspend fun calculateCurrentTotalValue(
-        holdings: List<UserHolding>
+        holdings: List<StockDto>
     ): Double = withContext(dispatcher) {
-        holdings.sumOf { calculateCurrentValue(it.ltp, it.quantity) }
+        holdings.sumOf { calculateCurrentValue(it.lastTradedPrice, it.quantity) }
     }
 
     suspend fun calculateTotalInvestment(
-        holdings: List<UserHolding>
+        holdings: List<StockDto>
     ): Double = withContext(dispatcher) {
-        holdings.sumOf { calculateInvestmentValue(it.avgPrice, it.quantity) }
+        holdings.sumOf { calculateInvestmentValue(it.averagePrice, it.quantity) }
     }
 
     suspend fun calculateTotalPNL(
@@ -50,8 +50,8 @@ class Utils @Inject constructor(
     }
 
     suspend fun calculateTodaysPNL(
-        holdings: List<UserHolding>
+        holdings: List<StockDto>
     ): Double = withContext(dispatcher) {
-        holdings.sumOf { (it.close - it.ltp) * it.quantity }
+        holdings.sumOf { (it.closePrice - it.lastTradedPrice) * it.quantity }
     }
 }
