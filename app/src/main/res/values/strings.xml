@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Upstox App</string>
+    <!-- Stock Information Strings -->
+    <string name="share_name">%s</string>
+    <string name="share_quantity">%d</string>
+    <string name="share_last_traded_price">LTP: ₹ %.2f</string>
+    <string name="share_profit_loss_amount">P/L: ₹ %.2f</string>
+
+
+    <!--defalut demi stock strings.-->
+    <string name="default_share_name">IRFC</string>
+    <string name="default_share_quantity">0</string>
+    <string name="default_share_last_traded_price">0.00</string>
+    <string name="default_profit_loss_amount">0.00</string>
+
+</resources>
