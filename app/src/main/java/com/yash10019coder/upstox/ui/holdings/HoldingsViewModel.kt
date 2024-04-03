@@ -3,7 +3,7 @@ package com.yash10019coder.upstox.ui.holdings
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yash10019coder.upstox.data.model.NetworkResult
-import com.yash10019coder.upstox.databinding.StockListingItemModel
+import com.yash10019coder.upstox.ui.databinding.StockListingItemModel
 import com.yash10019coder.upstox.domain.controller.StocksController
 import com.yash10019coder.upstox.mappers.UiMappers.mapStockDtoToUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel

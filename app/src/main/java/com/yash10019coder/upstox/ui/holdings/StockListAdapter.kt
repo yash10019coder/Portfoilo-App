@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yash10019coder.upstox.databinding.ItemListStockViewBinding
-import com.yash10019coder.upstox.databinding.StockListingItemModel
+import com.yash10019coder.upstox.ui.databinding.StockListingItemModel
 import timber.log.Timber
 
 class StockListAdapter(

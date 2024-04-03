@@ -1,4 +1,4 @@
-package com.yash10019coder.upstox.databinding
+package com.yash10019coder.upstox.ui.databinding
 
 data class StockListingItemModel(
     val symbol: String,

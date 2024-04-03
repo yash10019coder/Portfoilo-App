@@ -1,6 +1,6 @@
 package com.yash10019coder.upstox.domain.model
 
-import com.yash10019coder.upstox.databinding.StockListingItemModel
+import com.yash10019coder.upstox.ui.databinding.StockListingItemModel
 
 data class UserHoldingsDto(
     val stocksListings: List<StockListingItemModel>,

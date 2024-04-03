@@ -7,7 +7,7 @@
 
         <variable
             name="stock"
-            type="com.yash10019coder.upstox.databinding.StockListingItemModel" />
+            type="com.yash10019coder.upstox.ui.databinding.StockListingItemModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
