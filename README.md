@@ -1,6 +1,6 @@
-# Refactor Android App
+# Upstox Portfolio Tracker
 
-Zobaze Refactor Task is an Android application designed to showcase modern Android development practices, including dependency injection with Hilt, network communication with Retrofit, and a clean architecture approach with Model-View-ViewModel (MVVM) pattern.
+The Upstox Portfolio Tracker App leverages modern Android development techniques to provide a seamless experience for tracking stock investments. Using Hilt for dependency injection, Retrofit for network communication, and following the MVVM architecture, this app demonstrates best practices in Android development.
 
 ## Building the Project
 
@@ -15,16 +15,18 @@ To build the project, ensure you have Android Studio Arctic Fox or later and the
 
 The project follows the MVVM architecture pattern to separate the UI logic from the business logic, facilitating easier testing and maintenance. It is structured into several packages for clarity and separation of concerns:
 
-- `data`: Contains classes related to data handling, including API services, repositories, and models.
-- `databinding`: Includes data binding models used to bind UI components in XML layouts to data sources.
-- `di`: Holds the Dependency Injection setup using Hilt, including modules for providing application-wide dependencies.
-- `ui`: Contains UI-related classes such as Activities, Fragments, ViewModels, and Adapters.
+- `data/`: Data handling (API interactions, models, repositories).
+- `di/`: Dependency injection setup with Hilt.
+- `domain/`: Business logic (controllers, domain models, utilities).
+- `mappers/`: Data mapping between layers.
+- `ui/`: User Interface components (Activities, Fragments, ViewModels).
 
 ## Key Components
 
 - **Hilt** for dependency injection, simplifying the provision and management of dependencies across the application.
 - **Retrofit** with **OkHttp** for making API calls and handling network communication.
 - **Timber** for logging.
+- **StateFlow** for handling asynchronous data streams in the ViewModel.
 - **Android Jetpack Libraries** (LiveData, ViewModel, DataBinding) to implement the app according to the recommended best practices by Google.
 
 ## Dependencies
