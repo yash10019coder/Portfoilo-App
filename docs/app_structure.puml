@@ -1,0 +1,31 @@
+@startuml
+
+package "UI" {
+    [MainActivity]
+    [HoldingsFragment]
+}
+
+package "Domain" {
+    [StocksController]
+    [UserHoldingsDto]
+    [Utils]
+}
+
+package "Mappers" {
+    [DataMappers]
+    [DomainMappers]
+    [UiMappers]
+}
+
+package "Data" {
+    [StockService]
+    [StocksRepo]
+}
+
+'Define relationships
+UI --> Mappers : uses
+Mappers --> Domain : maps to/from
+Domain --> Data : requests data through
+Data --> Domain : returns data to
+
+@enduml
