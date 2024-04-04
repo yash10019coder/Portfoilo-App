@@ -1,6 +1,6 @@
-# Upstox Portfolio Tracker
+# Portfolio Tracker
 
-The Upstox Portfolio Tracker App leverages modern Android development techniques to provide a seamless experience for tracking stock investments. Using Hilt for dependency injection, Retrofit for network communication, and following the MVVM architecture, this app demonstrates best practices in Android development.
+The Portfolio Tracker App leverages modern Android development techniques to provide a seamless experience for tracking stock investments. Using Hilt for dependency injection, Retrofit for network communication, and following the MVVM architecture, this app demonstrates best practices in Android development.
 
 ## Building the Project
 
