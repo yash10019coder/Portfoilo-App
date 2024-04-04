@@ -6,42 +6,61 @@
     <data>
 
         <variable
-            name="employeeViewModel"
+            name="holdingsViewModel"
             type="com.yash10019coder.upstox.ui.holdings.HoldingsViewModel" />
 
         <variable
-            name="employeeListAdapter"
+            name="holdingsListAdapter"
             type="com.yash10019coder.upstox.ui.holdings.StockListAdapter" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/grey">
 
         <LinearLayout
             android:id="@+id/list_employee_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/total_holdings_container"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <include
                 layout="@layout/layout_list_stocks"
-                app:adapter="@{employeeListAdapter}" />
+                app:adapter="@{holdingsListAdapter}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/total_holdings_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/total_holdings_view"
+                layout="@layout/layout_total_holdings_view"
+                app:totalStockListingModel="@{holdingsViewModel.totalHoldings}" />
         </LinearLayout>
 
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

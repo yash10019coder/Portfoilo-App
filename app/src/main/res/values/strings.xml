@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Upstox App</string>
+    <string name="app_bar_title">Upstox Holding</string>
     <!-- Stock Information Strings -->
     <string name="share_name">%s</string>
     <string name="share_quantity">%d</string>
@@ -11,6 +12,9 @@
     <string name="total_stock_investment">Total Investment:</string>
     <string name="total_stock_today_profit_loss">Today\'s Profit &amp; Loss:</string>
     <string name="total_stock_profit_and_loss">Profit &amp; Loss:</string>
+
+    <!-- Formatter strings -->
+    <string name="formatter_currency">₹ %.2f</string>
 
     <!--defalut demi stock strings.-->
     <string name="default_share_name">IRFC</string>

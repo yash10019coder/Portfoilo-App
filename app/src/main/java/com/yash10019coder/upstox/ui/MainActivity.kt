@@ -17,6 +17,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
+        binding.toolbar.also {
+            title = getString(R.string.app_bar_title)
+        }
+
+
         val holdingsFragment: Fragment = HoldingsFragment.newInstance()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container_view, holdingsFragment)
